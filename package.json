@@ -1,6 +1,6 @@
 {
   "name": "ie-version",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "sasa+1 <sasaplus1@gmail.com>",
   "description": "get Internet Explorer version",
   "main": "./index.js",
@@ -9,5 +9,14 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/sasaplus1-prototype/ie-version.js.git"
+  },
+  "scripts": {
+    "build": "npm run compile && npm run minify",
+    "compile": "npm run webpack -- --output-file ie-version.js",
+    "minify": "npm run webpack -- --optimize-minimize --output-file ie-version.min.js",
+    "webpack": "webpack --colors --display-error-details --progress"
+  },
+  "devDependencies": {
+    "webpack": "^1.13.1"
   }
 }
